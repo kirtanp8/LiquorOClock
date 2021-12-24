@@ -1,25 +1,103 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
+import Login from './pages/Login'
+import NotFound from './pages/NotFound'
+import { getToken } from './helpers/auth'
+import { useEffect, useState } from 'react'
+import Register from './pages/Register'
+import { getUserId } from './helpers/auth'
+import Home from './pages/Home'
+import Footer from './components/Footer'
+import CocktailList from './pages/CocktailList'
+import CocktailShow from './pages/CocktailShow'
+import AddReview from './pages/AddReview'
+import AddRecipe from './pages/AddRecipe'
+import Profile from './pages/Profile'
+import EditRecipe from './pages/EditRecipe'
 
-function App() {
+function App({ id }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+ 
+
+  useEffect(() => {
+    if (getToken()) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [])
+
+
+  function ShowOneCocktail() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    if (getToken()) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [])
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <main>
+        <CocktailShow isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      </main>
+    </>
+  )
 }
 
-export default App;
+
+  function UserLogIn(props) {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+    useEffect(() => {
+      if (getToken()) {
+        setIsLoggedIn(true)
+      } else {
+        setIsLoggedIn(false)
+      }
+    }, [])
+
+    return (
+      <Login {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+    )
+  }
+
+
+  id = getUserId(id)
+  console.log(id)
+
+  return (
+    <>
+      <Router>
+        <header className='header'>
+        <nav>
+        <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+        </nav>
+        </header>
+        <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/cocktails' element={<CocktailList />} />
+          <Route path='/cocktails/:id' element={<ShowOneCocktail />} />
+          <Route path='/login' element={<UserLogIn />} />
+          <Route path='/register' element={<Register />}
+           />
+          <Route element={<NotFound />} />
+          <Route path='/add_recipe' element={<AddRecipe />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/cocktails/:id/edit' element={<EditRecipe />} />
+        </Routes>
+        </main>
+        <footer>
+          <Footer />
+        </footer>
+      </Router>
+    </>
+  )
+}
+
+export default App

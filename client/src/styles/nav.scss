@@ -1,0 +1,25 @@
+.nav-bar {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  h1 {
+    margin: auto;
+    color: #ff7812;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  .clock {
+    margin: 1% auto auto auto;
+  }
+}
+
+nav {
+  ul {
+    display: flex;
+    li {
+      list-style: none;
+    }
+  }
+}

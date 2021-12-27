@@ -10,15 +10,6 @@ import { getToken } from '../helpers/auth'
 import ReactStars from 'react-stars'
 import { FaStar } from 'react-icons/fa'
 import PrettyRating from 'pretty-rating-react';
-  import {
-  faHeart,
-  faHeartBroken,
-  faStar,
-  faStarHalfAlt,
-  faHeart as farHeart,
-  faStar as farStar,
-} from "@fortawesome/free-solid-svg-icons";
-
 
 
 const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
@@ -60,17 +51,23 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
 
   const roundedAvg = Math.round(arrAvg / 0.5) * 0.5;
 
-
-
+  console.log(isLoggedIn)
 
   return (
-    <div>
+    <>
+    <div className='recipe-detail'>
+      <div className='top-half'>
+      <div className='image-div'>
       <img src={cocktail.picture} />
-      <div className='title-description'></div>
+      </div>
+      <div className='title-description'>
       <h2>{cocktail.name}</h2>
-      <div className=''>
+      <div className='prep-difficulty'>
         <p>Prep: {cocktail.prep_time}</p>
         <p>Difficulty: {cocktail.difficulty}</p>
+      </div>
+        <div className='stars'>
+        {roundedAvg > 0 ? 
         <p> Average Rating
         <ReactStars
         count={5}
@@ -81,84 +78,100 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
         value={roundedAvg}
         />
         </p>
-      </div>
+        : <></>
+        }
+        </div>
       <div>
         <p>{cocktail.description}</p>
       </div>
       <div className='save-recipe'>
         {isSaved?
-          <UnSaveRecipe isSaved={isSaved} setIsSaved={setIsSaved} /> : <SaveRecipe isSaved={isSaved} setIsSaved={setIsSaved} />
-        }  
+          <UnSaveRecipe className='save' isSaved={isSaved} setIsSaved={setIsSaved} /> : <SaveRecipe className='save' isSaved={isSaved} setIsSaved={setIsSaved} />
+        }
+          <Button onClick={handleAddReviewShow}>REVIEW</Button>
+          <AddReview handleAddReviewClose={handleAddReviewClose} handleAddReviewShow={handleAddReviewShow} addReviewShow={addReviewShow}/>
       </div>
-      <div>
-        <p>Nutrition:</p>
-          <div className='nutritional values'></div>
+      </div>
+        </div>
+      <div className='nutrition'>
+        <div className='take-space'></div>
+      <div className='nutrition-section'>
+        <div className='nutrition-title'>
+        <h4>Nutrition</h4>
+        </div>
+        <div>
+          <div className='nutritional-container'>
+          <div className='nutritional-values'>
             <p>kcal</p>
             <p>{cocktail.kcal}</p>
-          <div className='nutritional values'>
+          </div>
+          <div className='nutritional-values'>
             <p>fat</p>
             <p>{cocktail.fat}</p>
           </div>
-          <div className='nutritional values'>
+          <div className='nutritional-values'>
             <p>saturates</p>
             <p>{cocktail.saturates}</p>
           </div>
-          <div className='nutritional values'>
+          <div className='nutritional-values'>
             <p>carbs</p>
             <p>{cocktail.carbs}</p>
           </div>
-          <div className='nutritional values'>
+          <div className='nutritional-values'>
             <p>sugars</p>
             <p>{cocktail.sugars}</p>
           </div>
-          <div className='nutritional values'>
+          <div className='nutritional-values'>
             <p>fibre</p>
             <p>{cocktail.fibre}</p>
           </div>
-          <div className='nutritional values'>
+          <div className='nutritional-values'>
             <p>protein</p>
             <p>{cocktail.protein}</p>
           </div>
-          <div className='nutritional values'>
+          <div className='nutritional-values'>
             <p>salt</p>
             <p>{cocktail.salt}</p>
           </div>
+          </div>
+          </div>
+      </div>
       </div>
       <div className='ingredients-method'>
-        <div className='Ingredients'>
+        <div className='ingredients'>
           <div>
             <h2>Ingredients</h2>
           </div>
           {cocktail.ingredients_one? 
-            <div>
+            <div className='ingredient-line'>
               
               <p>{cocktail.ingredients_one}</p>  
             </div>
               : <></>
           }
           {cocktail.ingredients_two? 
-            <div>
+            <div className='ingredient-line'>
                
               <p>{cocktail.ingredients_two}</p>  
             </div>
               : <></>
           }
           {cocktail.ingredients_three? 
-            <div>
+            <div className='ingredient-line'>
               
               <p>{cocktail.ingredients_three}</p>  
             </div>
               : <></>
           }
           {cocktail.ingredients_four? 
-            <div>
+            <div className='ingredient-line'>
               
               <p>{cocktail.ingredients_four}</p>  
             </div>
               : <></>
           }
           {cocktail.ingredients_five? 
-            <div>
+            <div className='ingredient-line'>
                
               <p>{cocktail.ingredients_five}</p>  
             </div>
@@ -166,10 +179,7 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
           }
 
         </div>
-        <div className='Method'>
-          <div>
-            <h2>Method</h2>
-          </div>
+        <div className='method'>
           {cocktail.instructions_one? 
             <div>
               <h3>Step One</h3>
@@ -206,26 +216,28 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
               : <></>
           }
           <div className="reviews-container-div">
-            <h5>Reviews</h5>
+            <h5>Reviews: {reviews.length}</h5>
             <div className="all-reviews">
               {reviews.map((review) => (
                 review.text.length > 0 ? 
                   <div className="single-review" key={review.id}>
                     <div className="single-review-p">
-                      <h4>{review.title}</h4>
-                      <p>{review.owner.username}: {review.text}  {review.created}</p>
+                      <div className='date-username'>
+                      <h6>{review.owner.username}: {review.title} </h6> <h6 className='date-time'>{review.created.split('T')[0].split('-')[2]}-{review.created.split('T')[0].split('-')[1]}-{review.created.split('T')[0].split('-')[0]} @ {review.created.split('T')[1].split(':')[0]}:{review.created.split('T')[1].split(':')[1]}</h6>
+                      </div>
+                      <p className='review-text'>{review.text} </p>
+                      
                     </div>
                   </div>
                   : <></>
               ))}
             </div>
+            <div className='take-space'></div>
           </div>
         </div>
         </div>
-        <div>Add Review Here!</div>
-        <Button onClick={handleAddReviewShow}></Button>
-        <AddReview handleAddReviewClose={handleAddReviewClose} handleAddReviewShow={handleAddReviewShow} addReviewShow={addReviewShow}/>
-      </div>
+    </div>
+      </>
   )
 }
 

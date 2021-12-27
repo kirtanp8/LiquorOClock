@@ -6,13 +6,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from jwt_auth.serializers.populated import PopulatedUserSerializer
 
 
 class RecipeListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get(self, request):
-        recipes = Shot.objects.all()
+        recipes = Recipe.objects.all()
         serialized_recipes = PopulatedRecipeSerializer(recipes, many=True)
         return Response(serialized_recipes.data, status=status.HTTP_200_OK)
 
@@ -52,3 +53,13 @@ class RecipeDetailView(APIView):
             updated_recipe.save()
             return Response(updated_recipe.data, status=status.HTTP_200_OK)
         return Response(updated_recipe.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+    def post(self, request, pk):
+        try:
+            recipe = Recipe.objects.get(id=pk)
+            user = request.user
+            user.saved.add(recipe)
+            saved_item = PopulatedUserSerializer(user)
+        except:
+            return Response(saved_item.data.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        return Response(saved_item.data, status=status.HTTP_200_OK)

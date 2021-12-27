@@ -3,9 +3,8 @@ import { useState } from 'react'
 import { setToken, setUserId, setUsername } from '../helpers/auth'
 import { useNavigate } from 'react-router'
 import Form from 'react-bootstrap/Form'
-import FormInput from '../components/FormInput'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 const Login = ({ setIsLoggedIn }) => {
   const [data, setData] = useState({
@@ -63,27 +62,39 @@ const Login = ({ setIsLoggedIn }) => {
     console.log(data)
   }
 
-  const formInputProps = { data, errorInfo, handleFormChange }
-  
   return (
-    <div>
-      <h1>Login to ShotsOclock</h1>
+    <div className='form-page'>
+      <div className='take-space-login'></div>
+    <div className='form-container'>
+      <div className='form-box'>
+      <h2 className='login-title'>Login to SpiritsO'Clock</h2>
       <Form onSubmit={handleSubmit} className="form">
         <Form.Group className="mb-3" controlId="formBasicEmail">
-            <FormInput 
-              placeholder="email" 
+          <Form.Label>Email</Form.Label>
+            <Form.Control
+              placeholder="Email" 
               type='email'
-              name='email' 
-              {...formInputProps} 
+              name='email'
+              value={data.email}
+              onChange={handleFormChange} 
             />
-            <FormInput 
-              placeholder="password" 
+            <Form.Label>Password</Form.Label>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control 
+              placeholder="Password" 
               type='password'
               name='password' 
-              {...formInputProps} 
+              value={data.password}
+              onChange={handleFormChange}
             />
+            </Form.Group>
           <div>
-            <Form.Control type="submit" value="Login" />
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control className='submit' type="submit" value="Login" />
+            </Form.Group>
+          </div>        
+          <div>
+            <p className='sign-up-message'>Don't have an account? <Link to='/register' className='link'>Sign up here.</Link></p> 
           </div>
           {isError ? (
             <div className='error'>
@@ -94,6 +105,8 @@ const Login = ({ setIsLoggedIn }) => {
           )}
         </Form.Group>
       </Form>
+      </div>
+    </div>
     </div>
   )
 }

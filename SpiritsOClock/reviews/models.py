@@ -5,7 +5,8 @@ class Review(models.Model):
     title = models.TextField(max_length=100)
     text = models.TextField(max_length=500)
     created = models.DateTimeField(auto_now_add=True)
-    star_rating = models.IntegerField()
+    star_rating = models.DecimalField(
+        max_digits=10, decimal_places=2, default=None)
     # rating = models.IntegerField()
     owner = models.ForeignKey(
         "jwt_auth.User",

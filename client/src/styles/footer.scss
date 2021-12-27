@@ -1,0 +1,22 @@
+footer {
+  height: 7vh;
+  .footer {
+    background-color: #d6f1c4;
+    color: #643754;
+    display: flex;
+    height: 100%;
+    margin: auto;
+    .links {
+      display: flex;
+      margin: auto;
+      width: 20%;
+      height: 100%;
+      p {
+        margin: auto;
+      }
+      a {
+        margin: auto;
+      }
+    }
+  }
+}

@@ -2,11 +2,12 @@ import React from 'react'
 import axios from 'axios'
 import { getToken } from '../helpers/auth'
 import { useState, useEffect } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Fade } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import CocktailCard from '../components/CocktailCard'
 import { getUsername } from '../helpers/auth'
 import { fetchAllCocktails } from '../helpers/api'
+import ReactStars from 'react-stars'
 
 const Profile = () => {
 
@@ -58,21 +59,18 @@ const Profile = () => {
   console.log(arrayOfUserCocktails)
 
   return (
-    <>
-      <div className='profile-section'>
-        <h6>Hi! {user.first_name}</h6>
-        <img src={user.image} />
-      </div>
-      <h6>Please see your saved Recipes Below</h6>
-        <ul className="cocktail-list">
+    <div className='profile-page'>
+  <h1 className='hello-message'>Hi {usernameCollected}</h1>
+      <h3 className='profile-heading'>My Saved Recipes</h3>
+        <ul className="cocktail-list-profile">
         {saved.map((s) => (
           <li key={s.id}>
             <CocktailCard {...s} />
           </li>
         ))}
       </ul>
-      <h6>Please see the Recipes you added below</h6>
-      <ul>
+      <h3 className='profile-heading'>My Recipes</h3>
+      <ul className='added-list'>
       {arrayOfUserCocktails.map((cocktail) => (
       <li>
       <Card style={{ width: '18rem' }} className="shot-card">
@@ -80,27 +78,26 @@ const Profile = () => {
           alt={cocktail.name} style={{ height: '100%', width: '50%' }}/>
         <Card.Body className="card-body">
           <Card.Title className="card-title">{cocktail.name}</Card.Title>
-          <Card.Text className="card-text">
-            £{cocktail.potential_price}
-          </Card.Text>
-          <Card.Text>
+          <Card.Text className='description'>
             {cocktail.description}
           </Card.Text>
           {/* <Card.Text className="card-user">
             <p>Added by {user?.username}</p>
           </Card.Text> */}
-          <Button variant='warning' className="button">
+          <div className='button-div'>
+          <Button className="button">
             <Link className="link" to={`/cocktails/${cocktail.id}`}>See Reviews </Link>
           </Button>
-          <Button variant='warning' className="button">
+          <Button className="button">
             <Link className="link" to={`/cocktails/${cocktail.id}/edit`}>Edit</Link>
           </Button>
+          </div>
         </Card.Body>
       </Card>
       </li>
       ))}
       </ul>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,51 @@
+.form-page-register {
+  height: 100%;
+  overflow: scroll;
+  .form-div-register {
+    margin: auto;
+    overflow: scroll;
+    .form-box-register {
+      width: 22%;
+      border-radius: 3px;
+      background-color: rgb(224, 201, 205);
+      margin: auto;
+      .form-title {
+        text-align: center;
+        color: #643754;
+      }
+      .form-container {
+        overflow: scroll;
+        height: 50%;
+        width: 98%;
+        margin: auto;
+      }
+    }
+
+    input {
+      background-color: #d6f1c4;
+    }
+    label {
+      color: #643754;
+    }
+    span {
+      color: #643754;
+    }
+    p {
+      text-align: center;
+      margin-top: 1%;
+      color: #643754;
+    }
+  }
+}
+
+.image-field {
+  margin: auto;
+  img {
+    width: 50%;
+    height: 50%;
+  }
+}
+
+.submit {
+  color: #643754;
+}

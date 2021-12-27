@@ -24,31 +24,31 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
       <nav>
         <ul>
           <li>
-            <Button variant="warning"><Link to='/'>Home</Link></Button>
-          </li>
-          <li>
-            <Button variant="warning"><Link to='/cocktails'>Cocktails</Link></Button>
+            <Button className='nav-button'><Link className='link' to='/'>Home</Link></Button>
           </li>
           {isLoggedIn ? (
             <>
             <li>
-              <Button variant="warning"><Link to='/profile'>Profile</Link></Button>
+              <Button className='nav-button'><Link className='link' to='/profile'>Profile</Link></Button>
             </li>
+            <li>
+            <Button className='nav-button'><Link className='link' to='/cocktails'>Gallery</Link></Button>
+          </li>
              <li>
-              <Button variant="warning"><Link to='/add_recipe'>Add Recipe</Link></Button>
+              <Button className='nav-button'><Link className='link' to='/add_recipe'>Add Recipe</Link></Button>
               </li>
               <li>
-                <Button variant="warning" onClick={handleLogout}>Logout</Button>
+                <Button className='nav-button' onClick={handleLogout}>Logout</Button>
               </li>
               
             </>
           ) : ( 
             <>
               <li>
-                <Button variant="warning"><Link to='/login'>Login</Link></Button>
+                <Button className='nav-button'><Link className='link' to='/login'>Login</Link></Button>
               </li>
               <li>
-                <Button variant="warning"><Link to='/register'>Register</Link></Button>
+                <Button className='nav-button'><Link className='link' to='/register'>Register</Link></Button>
               </li>
             </>
           )}

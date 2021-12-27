@@ -5,7 +5,7 @@ import { getToken } from '../helpers/auth'
 import axios from 'axios'
 import ImageUploadFile from '../components/ImageUploadFile'
 import { Form } from 'react-bootstrap'
-
+import { Row, Col } from 'react-bootstrap'
 
 const AddRecipe = () => {
     const [data, setData] = useState({
@@ -86,79 +86,111 @@ const AddRecipe = () => {
 
 
   return (
-    <div className='form'>
+    <>
+    <div className='form-page-add'>
+      <div className='take-space-register'></div>
+      <div className='form-div-add'>
+      <h2 className='form-title'>Share a Recipe with SpirtsO'Clock</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" name='name' value={data.name} placeholder="e.g. Mojito" onChange={handleFormChange} />
         </Form.Group>
+          <div className='levels'>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Prep Time</Form.Label>
-            <Form.Control type="text" name='prep_time' value={data.prep_time} placeholder="Prep Time" onChange={handleFormChange} />
-          </Form.Group>
+            <Form.Control type="text" name='prep_time' value={data.prep_time} placeholder="e.g 5 mins" onChange={handleFormChange} />
+          </Form.Group>    
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Difficulty</Form.Label>
-            <Form.Control type="text" name='difficulty' value={data.difficulty} placeholder="Description" onChange={handleFormChange} />
+            <Form.Control type="text" name='difficulty' value={data.difficulty} placeholder="e.g Easy" onChange={handleFormChange} />
           </Form.Group>
+          </div>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Description</Form.Label>
             <Form.Control type="text" name='description' value={data.description} placeholder="Description" onChange={handleFormChange} />
           </Form.Group>
+          <div className='nutrional-values-div'>
+            <Row className="g-2">
+          <div className='nutritional-value'>
+            <Col md>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>kcal</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='kcal' value={parseInt(data.kcal)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='kcal' value={parseInt(data.kcal)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </Col>
+          </div>
+          <div className='nutritional-value'>
+            <Col md>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>fat</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='fat' value={parseInt(data.fat)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='fat' value={parseInt(data.fat)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </Col>
+          </div>
+          <div className='nutritional-value'>
+            <Col md>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>saturates</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='saturates' value={parseInt(data.saturates)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='saturates' value={parseInt(data.saturates)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </Col>
+          </div>
+           <div className='nutritional-value'>
+            <Col md>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>carbs</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='carbs' value={parseInt(data.carbs)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='carbs' value={parseInt(data.carbs)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </Col>
+          </div>
+          </Row>
+          <Row className="g-2">
+          <div className='nutritional-value'>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>sugars</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='sugars' value={parseInt(data.sugars)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='sugars' value={parseInt(data.sugars)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </div>
+           <div className='nutritional-value'>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>fibre</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='fibre' value={parseInt(data.fibre)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='fibre' value={parseInt(data.fibre)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </div>
+          <div className='nutritional-value'>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>protein</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='protein' value={parseInt(data.protein)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='protein' value={parseInt(data.protein)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>protein</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='protein' value={parseInt(data.protein)}  placeholder='potential cost' onChange={handleFormChange} />
-          </Form.Group>
+          </div>
+          <div className='nutritional-value'>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>salt</Form.Label>
-            <Form.Control type='number' min='0' max='1000' name='salt' value={parseInt(data.salt)}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='number' min='0' max='1000' name='salt' value={parseInt(data.salt)}  placeholder='e.g 12' onChange={handleFormChange} />
           </Form.Group>
+          </div>
+          </Row>
+          </div>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Ingredients 1</Form.Label>
             <Form.Control type='text' name='ingredients_one' value={data.ingredients_one}  placeholder='potential cost' onChange={handleFormChange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Ingredients 2</Form.Label>
-            <Form.Control type='text'  name='ingredients_two' value={data.ingredients_two}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='text'  name='ingredients_two' value={data.ingredients_two}  placeholder='e.g juice of 1 lime' onChange={handleFormChange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Ingredients 3</Form.Label>
-            <Form.Control type='text' name='ingredients_three' value={data.ingredients_three}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='text' name='ingredients_three' value={data.ingredients_three}  placeholder='e.g 60 ml white rum' onChange={handleFormChange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Ingredients 4</Form.Label>
-            <Form.Control type='text' name='ingredients_four' value={data.ingredients_four}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='text' name='ingredients_four' value={data.ingredients_four}  placeholder='e.g soda water, to taste' onChange={handleFormChange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Ingredients 5</Form.Label>
-            <Form.Control type='text' name='ingredients_five' value={data.ingredients_five}  placeholder='potential cost' onChange={handleFormChange} />
+            <Form.Control type='text' name='ingredients_five' value={data.ingredients_five}  placeholder='ice' onChange={handleFormChange} />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Step One</Form.Label>
@@ -190,7 +222,16 @@ const AddRecipe = () => {
             handleImageUrl={handleImageUrl}
           />
       </Form>
+          <div>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control className='submit' type="submit" value="Add" />
+            </Form.Group>
+          </div>  
+      </div>
+       <div className='take-space-bottom'></div>
     </div>
+   
+    </>
   )
 }
 

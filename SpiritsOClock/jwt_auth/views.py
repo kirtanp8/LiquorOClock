@@ -1,6 +1,7 @@
+import re
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import serializers, status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 from datetime import datetime, timedelta
@@ -9,9 +10,26 @@ from .models import User
 from django.conf import settings
 from jwt_auth.serializers.populated import PopulatedUserSerializer
 import jwt
+from recipes.models import Recipe
 
 from .serializers.common import UserSerializer
 User = get_user_model()
+
+
+class SavedView(APIView):
+    def get(self, request):
+        user = request.user
+        serialized_user = PopulatedUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+
+class SavedDetailView(APIView):
+    def put(self, request, pk):
+        recipe = Recipe.objects.get(id=pk)
+        user = request.user
+        user.saved.remove(recipe)
+        serialized_user = PopulatedUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
 
 
 class UserProfileDetailView(APIView):

@@ -5,15 +5,14 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className='links'>
+        <a href='https://github.com/kirtanp8' target='_blank' rel='noreferrer'>
+          <FaGithub className='icon-github' />
+        </a>
         <p>Created by Kirtan Patel</p>
         <a href='https://www.linkedin.com/in/kirtanp8/' target='_blank' rel='noreferrer'>
-          <FaLinkedin className='icon' />
-        </a>
-        <a href='https://github.com/kirtanp8' target='_blank' rel='noreferrer'>
-          <FaGithub className='icon' />
+          <FaLinkedin className='icon-linkedin' />
         </a>
       </div>
-      <p className='rights'>&copy; 2021 All rights reserved</p>
     </div>
   )
 }

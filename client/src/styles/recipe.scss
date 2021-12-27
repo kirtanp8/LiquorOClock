@@ -1,0 +1,116 @@
+.recipe-detail {
+  height: 100%;
+  overflow: scroll;
+}
+
+.top-half {
+  display: flex;
+  .image-div {
+    margin-top: 1%;
+    width: 50%;
+    img {
+      float: right;
+    }
+  }
+  .title-description {
+    margin-top: 1%;
+    width: 50%;
+    h2 {
+      text-transform: uppercase;
+    }
+    .prep-difficulty {
+      display: flex;
+      p {
+        justify-content: space-between;
+        margin: 1% 1%;
+      }
+    }
+  }
+  .save-recipe {
+    width: 30%;
+    display: flex;
+    button {
+      height: 30%;
+      font-size: 1rem;
+      text-align: center;
+      margin: auto;
+      color: #d6f1c4;
+      background-color: #643754;
+      border: none;
+    }
+  }
+}
+.nutrition {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  .take-space {
+    width: 50%;
+  }
+  .nutrition-section {
+    display: flex;
+    width: 50%;
+    float: right;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    color: #643754;
+    .nutritional-container {
+      display: flex;
+      .nutritional-values {
+        text-transform: lowercase;
+        display: flex;
+        flex-direction: column;
+        margin: 1% 1%;
+        height: 30%;
+        width: 11%;
+        text-align: center;
+        background-color: #d6f1c4;
+        color: #643754;
+      }
+    }
+  }
+}
+.ingredients-method {
+  display: flex;
+  .ingredients {
+    background-color: #d6f1c4;
+    text-align: center;
+    height: 30%;
+    margin: 0 1%;
+    border: 1px solid goldenrod;
+    .ingredient-line {
+      text-align: left;
+      border-top: 1px solid rgba(238, 166, 10, 0.904);
+    }
+  }
+  .method {
+  }
+}
+
+.reviews-container-div {
+  border: 5px solid #643754;
+  background-color: #d6f1c4;
+  color: #643754;
+  overflow: scroll;
+  h5 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .all-reviews {
+    background-color: #d6f1c4;
+    .single-review {
+      border-top: 2px solid #643754;
+    }
+  }
+}
+
+.date-username {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-text {
+  color: black;
+  margin: 1% 1%;
+}

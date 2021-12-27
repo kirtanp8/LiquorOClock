@@ -3,6 +3,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import ImageUploadFile from '../components/ImageUploadFile'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   const [error, setError] = useState('')
@@ -55,10 +57,12 @@ const Register = () => {
 
   console.log(data)
   return (
-    <div>
-      <div className='form-div'>
-        <h2 className='form-title'>Register to SpiritsO'Clock</h2>
-        <Form className='form' onSubmit={handleSubmit}>
+    <div className='form-page-register'>
+      <div className='take-space-register'></div>
+      <div className='form-div-register'>
+        <div className='form-box-register'>
+        <h2 className='form-title'>Create Account</h2>
+        <Form className='form-container' onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>
           <Form.Control 
@@ -98,7 +102,7 @@ const Register = () => {
           />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Password - Your password must be 8 characters or more</Form.Label>
           <Form.Control 
             placeholder='Password'
             type='password'
@@ -107,7 +111,6 @@ const Register = () => {
             onChange={handleChange}
           />
           </Form.Group>
-          <span className='pass-valid'>Your password must be eight characters or more</span>
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Password Confirmation</Form.Label>
           <Form.Control 
@@ -126,10 +129,16 @@ const Register = () => {
             handleImageUrl={handleImageUrl}
           />
           </Form.Group>
-          <input type='submit' value="Register" />
+          <div className='submit'>
+          <Form.Control className='submit' type='submit' value="Register" placeholder='Register'/>
+          </div>
+          <div>
+            <p className='sign-up-message'>Already have an account? <Link to='/login' className='link'>Login in here.</Link></p> 
+          </div>
         </Form>
-      </div>
-      <p>{error}</p>
+        </div>
+        </div>
+      <p className='error-message'>{error}</p>
     </div>
   )
 }

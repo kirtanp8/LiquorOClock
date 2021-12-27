@@ -68,14 +68,11 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
         show={addReviewShow}
         onHide={handleAddReviewClose}
       >
-      <Modal.Dialog>
-        <Modal.Header closeButton>
-          <Modal.Title>Post Your Review</Modal.Title>
-        </Modal.Header>
-        <Form onSubmit={handleSubmit}>
-        <Modal.Body>
-            <Form.Group>
-              <Form.Label>
+      <Modal.Dialog className='modal-form'>
+        <Modal.Header className='header' closeButton>
+          <Modal.Title id="modal-title">Post Your Review</Modal.Title>
+                      <Form.Group>
+              <Form.Label className='stars'>
                 <div>
                     <ReactStars
                       name="star_rating"
@@ -92,22 +89,23 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
                 </div>
               </Form.Label>
             </Form.Group>
+        </Modal.Header>
+        <Form onSubmit={handleSubmit}>
+        <Modal.Body>
           <Form.Group>
-              <div className='form'>
-                <p className=''>Rating:</p>
-                <Form.Control onChange={handleChange} value={data.title} type='text'
+                <Form.Label className='form-title'>Title</Form.Label>
+                <Form.Control className='title-section' onChange={handleChange} value={data.title} type='text'
                 name='title'
-                as='textarea' style={{ height: '200px' }} placeholder='Post Your Review Here' />
-              </div>
+                as='textarea' style={{ height: '10%' }} placeholder='Review Title' />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Review</Form.Label>
+              <Form.Label className='form-title'>Review</Form.Label>
               <Form.Control onChange={handleChange} value={data.text} type='text'
               name='text' as='textarea' style={{ height: '200px' }} placeholder='Post Your Review Here' />
             </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" className='review-button' value='post' type='submit'>Save changes</Button>
+          <Button className='review-button' value='post' type='submit'>Save changes</Button>
         </Modal.Footer>
         </Form>
       </Modal.Dialog>

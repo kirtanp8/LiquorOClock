@@ -1,0 +1,25 @@
+.home-page {
+  display: flex;
+  height: 100%;
+  .opening {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    h1,
+    h3 {
+      color: #643754;
+    }
+  }
+  .home-page-image {
+    width: 50%;
+    img {
+      height: 70%;
+      width: 60%;
+      margin: 5% auto auto auto;
+    }
+  }
+}
+
+.links {
+  color: #643754;
+}

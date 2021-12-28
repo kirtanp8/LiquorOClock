@@ -45,6 +45,7 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
       console.log(response)
       setIsError(false)
       setData('')
+      window.location.reload(false)
     } catch (err) {
       console.log(err)
       setIsError(true)    

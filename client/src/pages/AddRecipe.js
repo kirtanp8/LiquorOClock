@@ -221,12 +221,13 @@ const AddRecipe = () => {
             name='picture'
             handleImageUrl={handleImageUrl}
           />
-      </Form>
           <div>
             <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control className='submit' type="submit" value="Add" />
             </Form.Group>
           </div>  
+      </Form>
+
       </div>
        <div className='take-space-bottom'></div>
     </div>

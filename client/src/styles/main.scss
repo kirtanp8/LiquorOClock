@@ -19,6 +19,9 @@
 
 header {
   height: 10%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   background-color: #d6f1c4;
 }
 main {

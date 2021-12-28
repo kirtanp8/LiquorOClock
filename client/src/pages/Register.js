@@ -67,7 +67,7 @@ const Register = () => {
           <Form.Label>First Name</Form.Label>
           <Form.Control 
             type="text" 
-            name='name' 
+            name='first_name' 
             value={data.first_name}
             placeholder='First Name'
             onChange={handleChange} />

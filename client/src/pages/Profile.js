@@ -61,7 +61,7 @@ const Profile = () => {
   return (
     <div className='profile-page'>
   <h1 className='hello-message'>Hi {usernameCollected}</h1>
-      <h3 className='profile-heading'>My Saved Recipes</h3>
+      <h3 className='profile-heading'>Your Saved Recipes</h3>
         <ul className="cocktail-list-profile">
         {saved.map((s) => (
           <li key={s.id}>
@@ -69,7 +69,7 @@ const Profile = () => {
           </li>
         ))}
       </ul>
-      <h3 className='profile-heading'>My Recipes</h3>
+      <h3 className='profile-heading'>Your Recipes</h3>
       <ul className='added-list'>
       {arrayOfUserCocktails.map((cocktail) => (
       <li>

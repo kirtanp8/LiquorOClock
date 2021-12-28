@@ -33,6 +33,7 @@ const SaveRecipe = () => {
       console.log(response.data)
       setIsError(false)
       setIsSaved(true)
+      window.location.reload(false)
     } catch (err) {
       console.error(err)
       setIsError(true)

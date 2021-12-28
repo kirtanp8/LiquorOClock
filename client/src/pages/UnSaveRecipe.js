@@ -15,7 +15,7 @@ const UnSaveRecipe = ({ setIsSaved }) => {
 
     const config = {
       method: 'put', 
-      url: `/api/recipes/${id}/`,
+      url: `/api/auth/saved/${id}/`,
       headers: {
         'Authorization': `Bearer ${getToken()}`,  
         'Content-Type': 'application/json',        
@@ -25,7 +25,7 @@ const UnSaveRecipe = ({ setIsSaved }) => {
       const response = await axios(config)
       console.log(response.data)
       setIsError(false)
-      setIsSaved(false)
+      window.location.reload(false)
     } catch (err) {
       console.error(err)
       setIsError(true)

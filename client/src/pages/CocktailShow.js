@@ -15,14 +15,51 @@ import PrettyRating from 'pretty-rating-react';
 const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
   const [cocktail, setCocktail] = useState([])
   const [reviews, setReview] = useState([])
+  const [saved, setSaved] = useState([])
   const [addReviewShow, setAddReviewShow] = useState(false)
   const arrayOfRatings = []
   const handleAddReviewShow = () => setAddReviewShow(true)
   const handleAddReviewClose = () => setAddReviewShow(false)
-
+  const [savedOrNot, setSavedOrNot] = useState(false)
 
   const { id } = useParams()
   console.log(id)
+
+    useEffect(() => {
+    async function fetchUserDetail() {
+      const config = {
+        method: 'get',
+        url: '/api/auth/saved/',
+        headers: { 
+          'Authorization': `Bearer ${getToken()}`,
+          'Content-Type': 'application/json',
+        },
+      }
+
+      const response = await axios(config)
+      setSaved(response.data.saved)
+    }
+    fetchUserDetail()
+  }, [])
+
+  console.log(saved)
+  console.log(id)
+  const boolValue = saved.filter(ele => ele.id == id ? true : false)
+  console.log(boolValue)
+  console.log(boolValue.length)
+
+  // for (let i = 0; i < saved.length; i++) {
+  //   if (saved[i].id === id ) {
+  //     console.log([saved[i].id])
+  //     setSavedOrNot(true)
+  //   }
+  //   else {
+  //     setSavedOrNot(false)
+  //   }
+  // }
+
+
+
 
   useEffect(() => {
     async function fetchCocktail() {
@@ -85,7 +122,7 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
         <p>{cocktail.description}</p>
       </div>
       <div className='save-recipe'>
-        {isSaved?
+        {boolValue.length === 1 ?
           <UnSaveRecipe className='save' isSaved={isSaved} setIsSaved={setIsSaved} /> : <SaveRecipe className='save' isSaved={isSaved} setIsSaved={setIsSaved} />
         }
           <Button onClick={handleAddReviewShow}>REVIEW</Button>

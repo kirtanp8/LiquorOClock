@@ -35,7 +35,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
             <Button className='nav-button'><Link className='link' to='/cocktails'>Gallery</Link></Button>
           </li>
              <li>
-              <Button className='nav-button'><Link className='link' to='/add_recipe'>Add Recipe</Link></Button>
+              <Button className='nav-button'><Link className='link' to='/add_recipe'>Share</Link></Button>
               </li>
               <li>
                 <Button className='nav-button' onClick={handleLogout}>Logout</Button>

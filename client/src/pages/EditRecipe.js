@@ -79,7 +79,6 @@ const EditRecipe = () => {
       ...data,
       [name]: value, 
     })
-  console.log(data)
   } 
 
 

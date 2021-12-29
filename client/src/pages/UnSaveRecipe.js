@@ -7,10 +7,9 @@ import { useState } from 'react'
 
 const UnSaveRecipe = ({ setIsSaved }) => {
   const { id } = useParams()
+  const [isError, setIsError] = useState(false)
 
-    const [isError, setIsError] = useState(false)
-
-    const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
     const config = {
@@ -23,11 +22,9 @@ const UnSaveRecipe = ({ setIsSaved }) => {
     }
     try {
       const response = await axios(config)
-      console.log(response.data)
       setIsError(false)
       window.location.reload(false)
     } catch (err) {
-      console.error(err)
       setIsError(true)
     }
     
@@ -36,7 +33,7 @@ const UnSaveRecipe = ({ setIsSaved }) => {
 
   return (
     <>
-      <Button onSubmit={handleSubmit} onClick={handleSubmit}>Unsave</Button>
+      <Button onSubmit={handleSubmit} onClick={handleSubmit}>UNSAVE</Button>
     </>
   )
 }

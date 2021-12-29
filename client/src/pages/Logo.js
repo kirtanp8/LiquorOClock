@@ -6,7 +6,7 @@ const Logo = () => {
 
   return (
     <div className='logo'>
-      <h1>Spirits</h1>
+      <h1 className='logo-title'>Spirits</h1>
       <div className="clock">
         <div className="hands">
             <div className="second"></div>
@@ -77,7 +77,7 @@ const Logo = () => {
           <span></span>
         </div>
       </div>
-      <h1>'Clock</h1>
+      <h1 className='logo-title'>'Clock</h1>
     </div>
   )
 }

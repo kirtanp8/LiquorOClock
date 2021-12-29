@@ -8,7 +8,6 @@ import ReactStars from 'react-stars'
 
 const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
   const [isError, setIsError] = useState(false)
-
   const { id } = useParams()
 
   const [data, setData] = useState({
@@ -21,10 +20,8 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
 
   const handleRating = (value) => {
     setData({ ...data, star_rating: value })
-    console.log(value)
   }
 
-  console.log(getToken())
 
 
   const handleSubmit = async (event) => {
@@ -42,12 +39,10 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
     
     try {
       const response = await axios(config)
-      console.log(response)
       setIsError(false)
       setData('')
       window.location.reload(false)
     } catch (err) {
-      console.log(err)
       setIsError(true)    
     }
 
@@ -59,7 +54,6 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
       ...data, 
       [name]: value,
      })
-     console.log(data)
   }
 
  
@@ -72,7 +66,7 @@ const AddReview = ({  addReviewShow, handleAddReviewClose }) => {
       <Modal.Dialog className='modal-form'>
         <Modal.Header className='header' closeButton>
           <Modal.Title id="modal-title">Post Your Review</Modal.Title>
-                      <Form.Group>
+            <Form.Group>
               <Form.Label className='stars'>
                 <div>
                     <ReactStars

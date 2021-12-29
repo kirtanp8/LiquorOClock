@@ -10,8 +10,15 @@
   }
 }
 
+.stars {
+  span {
+    color: #643754;
+  }
+}
+
 .cocktail-list-profile {
   height: 50%;
+  min-height: 400px;
   display: flex;
   width: 90%;
   overflow-y: scroll;
@@ -20,7 +27,7 @@
     list-style: none;
     margin: auto 1%;
     .shot-card {
-      height: 400px;
+      height: 350px;
       color: #d6f1c4;
       margin: 4% 5%;
       padding: 0% 2%;
@@ -66,6 +73,7 @@
 
 .added-list {
   height: 50%;
+  min-height: 400px;
   display: flex;
   width: 90%;
   overflow-y: scroll;
@@ -74,7 +82,7 @@
     list-style: none;
     margin: auto 1%;
     .shot-card {
-      height: 400px;
+      height: 350px;
       color: #d6f1c4;
       margin: 4% 5%;
       padding: 0% 2%;
@@ -92,9 +100,10 @@
         }
         .description {
           height: 65%;
+          max-height: 65%;
           font-size: 0.8rem;
           text-align: center;
-          overflow: scroll;
+          overflow: hidden;
         }
         .button-div {
           display: flex;

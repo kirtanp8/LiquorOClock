@@ -9,7 +9,7 @@ const Home = () => {
     <Fade left cascade>
     <div className='opening'>
       <h1>Welcome to SpiritsO'Clock</h1>
-      <h3>The Home for Sharing your favourite Cocktail Recipes and finding new ones</h3>
+      <h5>The Home for Sharing your favourite Cocktail Recipes and finding new ones</h5>
       <p>Please <Link to='/login' className='links'>log in</Link> or <Link to='/register' className='links'>register</Link> to view all features mentioned</p>
     </div>
     </Fade>

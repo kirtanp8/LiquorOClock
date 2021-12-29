@@ -31,17 +31,14 @@ const Login = ({ setIsLoggedIn }) => {
     
     try {
       const response = await axios(config).catch(handleError)
-      console.log(response.data.token)
       setToken(response.data.token)
       setUserId(response.data.id)
       setUsername(response.data.username)
       navigate('/')
       setIsLoggedIn(true)
       setIsError(false)
-      console.log(response.data.token)
       window.location.reload(false)
     } catch (err) {
-      console.log(err)
       setIsError(true)
     }
   }
@@ -59,7 +56,6 @@ const Login = ({ setIsLoggedIn }) => {
       ...data,
       [name]: value,
     })
-    console.log(data)
   }
 
   return (

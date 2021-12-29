@@ -21,9 +21,7 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
   const handleAddReviewShow = () => setAddReviewShow(true)
   const handleAddReviewClose = () => setAddReviewShow(false)
   const [savedOrNot, setSavedOrNot] = useState(false)
-
   const { id } = useParams()
-  console.log(id)
 
     useEffect(() => {
     async function fetchUserDetail() {
@@ -42,24 +40,7 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
     fetchUserDetail()
   }, [])
 
-  console.log(saved)
-  console.log(id)
   const boolValue = saved.filter(ele => ele.id == id ? true : false)
-  console.log(boolValue)
-  console.log(boolValue.length)
-
-  // for (let i = 0; i < saved.length; i++) {
-  //   if (saved[i].id === id ) {
-  //     console.log([saved[i].id])
-  //     setSavedOrNot(true)
-  //   }
-  //   else {
-  //     setSavedOrNot(false)
-  //   }
-  // }
-
-
-
 
   useEffect(() => {
     async function fetchCocktail() {
@@ -100,20 +81,23 @@ const CocktailShow = ({ isLoggedIn, isSaved, setIsSaved }) => {
       <div className='title-description'>
       <h2>{cocktail.name}</h2>
       <div className='prep-difficulty'>
-        <p>Prep: {cocktail.prep_time}</p>
-        <p>Difficulty: {cocktail.difficulty}</p>
+        <p>Prep: {cocktail.prep_time} | Difficulty: {cocktail.difficulty}</p>
       </div>
-        <div className='stars'>
+        <div >
         {roundedAvg > 0 ? 
-        <p> Average Rating
-        <ReactStars
+        <p className='stars'> Average Rating: 
+        <span id='span-stars'>
+        <ReactStars 
         count={5}
+        style={{ backgroundColor: "red" }}
+        color2={"#643754"}
         emptyIcon={<i className="far fa-star"></i>}
         halfIcon={<i className="fa fa-star-half-alt"></i>}
         fullIcon={<i className="fa fa-star"></i>}
-        activeColor="#ffd700"
         value={roundedAvg}
+        // value={{ color: '#643754' }}
         />
+        </span> 
         </p>
         : <></>
         }

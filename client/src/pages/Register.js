@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import ImageUploadFile from '../components/ImageUploadFile'
-import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 
 const Register = () => {
   const [error, setError] = useState('')
@@ -20,11 +18,21 @@ const Register = () => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = async (event) => {
+   const handleSubmit = async (event) => {
     event.preventDefault()
+    
+    const config = {
+      method: 'post',
+      url: 'api/auth/register/',
+      headers: { 
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    }
+    
     try {
-      const { data } = await axios.post('api/auth/register/', data)
-      handleSuccessfulRegister()
+      const response = await axios(config)
+      navigate('/login')
     } catch (err) {
       if (
         !data.username ||
@@ -42,6 +50,7 @@ const Register = () => {
     }
   }
 
+
   const handleChange = (event) => {
     const { name, value } = event.target
     setData({ ...data, [name]: value })
@@ -51,18 +60,13 @@ const Register = () => {
     setData({ ...data, image: url })
   }
 
-  const handleSuccessfulRegister = () => {
-    navigate('/login')
-  }
-
-  console.log(data)
   return (
     <div className='form-page-register'>
       <div className='take-space-register'></div>
       <div className='form-div-register'>
         <div className='form-box-register'>
         <h2 className='form-title'>Create Account</h2>
-        <Form className='form-container' onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className='form-container'>
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>First Name</Form.Label>
           <Form.Control 
@@ -129,9 +133,9 @@ const Register = () => {
             handleImageUrl={handleImageUrl}
           />
           </Form.Group>
-          <div className='submit'>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control className='submit' type='submit' value="Register" placeholder='Register'/>
-          </div>
+          </Form.Group>
           <div>
             <p className='sign-up-message'>Already have an account? <Link to='/login' className='link'>Login in here.</Link></p> 
           </div>

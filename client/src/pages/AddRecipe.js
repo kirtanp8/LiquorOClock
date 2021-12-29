@@ -35,13 +35,8 @@ const AddRecipe = () => {
     picture: ''
   })
 
-  const arrayOfKeys = Object.keys(data)
-  console.log(arrayOfKeys)
-
   const [isError, setIsError] = useState(false)
   const navigate = useNavigate()
-
-  console.log(getToken())
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -55,7 +50,6 @@ const AddRecipe = () => {
       },
       data,
     }
-    console.log(config)
     try {
       const response = await axios(config)
       console.log(response.data)
@@ -75,14 +69,11 @@ const AddRecipe = () => {
       ...data,
       [name]: value, 
     })
-  console.log(data)
   }  
 
   const handleImageUrl = (url) => {
     setData({ ...data, picture: url })
   }
-
-
 
 
   return (

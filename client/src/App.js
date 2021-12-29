@@ -74,7 +74,7 @@ function App({ id }) {
     <>
       <Router>
         <header className='header'>
-        <nav>
+        <nav className='whole-nav'>
         <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
         </nav>
         </header>

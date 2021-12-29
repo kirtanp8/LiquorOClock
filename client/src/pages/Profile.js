@@ -7,30 +7,17 @@ import { Link } from 'react-router-dom'
 import CocktailCard from '../components/CocktailCard'
 import { getUsername } from '../helpers/auth'
 import { fetchAllCocktails } from '../helpers/api'
-import ReactStars from 'react-stars'
 
 const Profile = () => {
-
-
   const usernameCollected = getUsername()
-
-  console.log(usernameCollected)
-
   const [user, setUser] = useState([])
   const [saved, setSaved] = useState([])
-
   const [cocktails, setCocktails] = useState([])
-
   let arrayOfUserCocktails = []
 
     useEffect(() => {
     fetchAllCocktails().then(setCocktails).catch(console.log("error"))
   }, [])
-
-
-
-  console.log(cocktails)
-
 
   useEffect(() => {
     async function fetchUserDetail() {
@@ -56,7 +43,6 @@ const Profile = () => {
     }
   }
 
-  console.log(arrayOfUserCocktails)
 
   return (
     <div className='profile-page'>

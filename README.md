@@ -19,3 +19,7 @@ The task was to create a Django + Python Application, utilising the information 
 * Git, GitHub
 
 # Secure Routes
+
+Authentication fueled by Django means that users will need to be logged in and registered to the app before they can make use of all the content supplied by the website. 
+
+![Screenshot 2022-01-02 at 22 14 22](https://user-images.githubusercontent.com/83728526/147890820-b7d884c6-2e5a-4f35-9fc0-95b065abe685.png)

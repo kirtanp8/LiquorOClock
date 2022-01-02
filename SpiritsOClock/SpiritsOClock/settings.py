@@ -1,5 +1,6 @@
-import os
 import django_on_heroku
+import os
+
 
 from pathlib import Path
 

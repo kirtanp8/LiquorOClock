@@ -1,4 +1,5 @@
 import os
+import django_on_heroku
 
 from pathlib import Path
 
@@ -138,3 +139,5 @@ AUTH_USER_MODEL = 'jwt_auth.User'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'client', "build", "static"),
 )
+
+django_on_heroku.settings(locals())

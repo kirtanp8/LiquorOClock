@@ -10,12 +10,16 @@ footer {
     .links {
       display: flex;
       margin: auto;
-      width: 20%;
       height: 100%;
+      .take-space-footer {
+        width: 5px;
+      }
       p {
         margin: auto;
         overflow: hidden;
         font-size: 1rem;
+        min-width: 150px;
+        text-align: center;
       }
       a {
         margin: auto;
@@ -29,7 +33,6 @@ footer {
     .footer {
       .links {
         p {
-          display: none;
         }
         a {
         }

@@ -10,6 +10,7 @@
 
 .logo {
   display: flex;
+  min-height: 50px;
   h1 {
     margin: auto;
     color: #643754;
@@ -17,7 +18,7 @@
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
   .clock {
-    margin: 1% auto auto auto;
+    margin: auto;
   }
 }
 

@@ -1,0 +1,46 @@
+.modal-content {
+  background-color: #d6f1c4;
+}
+.modal-form {
+  width: 95%;
+  height: 95%;
+  .header {
+    background-color: #643754;
+    .stars {
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      text-align: center;
+    }
+    #modal-title {
+      background-color: #643754;
+      margin: auto;
+      color: #d6f1c4;
+    }
+    button {
+      color: #d6f1c4;
+      background-color: #d6f1c4;
+    }
+  }
+  .modal-body {
+    background-color: #643754;
+    textarea {
+      background-color: #d6f1c4;
+    }
+    .form-title {
+      color: #d6f1c4;
+    }
+    .title-section {
+      max-height: 10%;
+    }
+  }
+  .modal-footer {
+    background-color: #643754;
+    button {
+      margin: auto;
+      color: #643754;
+      background-color: #d6f1c4;
+      border: none;
+    }
+  }
+}

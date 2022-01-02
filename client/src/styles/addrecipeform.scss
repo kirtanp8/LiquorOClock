@@ -1,0 +1,39 @@
+.form-page-add {
+  height: 83vh;
+  overflow: scroll;
+  h2 {
+    text-align: center;
+    color: #643754;
+  }
+  .form-div-add {
+    width: 25%;
+    min-width: 250px;
+    margin: auto;
+    border: 5px solid rgb(224, 201, 205);
+    border-radius: 3px;
+    background-color: rgb(224, 201, 205);
+  }
+  .levels {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .nutrional-values-div {
+    .nutritional-value {
+      width: 20%;
+      min-width: 100px;
+      text-align: center;
+      margin: 1% auto;
+    }
+  }
+  input,
+  textarea {
+    background-color: #d6f1c4;
+  }
+  label {
+    color: #643754;
+  }
+}
+
+.take-space-bottom {
+  height: 3vh;
+}

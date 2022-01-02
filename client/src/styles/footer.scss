@@ -1,0 +1,42 @@
+footer {
+  height: 7vh;
+  .footer {
+    background-color: #d6f1c4;
+    color: #643754;
+    display: flex;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    .links {
+      display: flex;
+      margin: auto;
+      height: 100%;
+      .take-space-footer {
+        width: 5px;
+      }
+      p {
+        margin: auto;
+        overflow: hidden;
+        font-size: 1rem;
+        min-width: 150px;
+        text-align: center;
+      }
+      a {
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) and (max-height: 540px) {
+  footer {
+    .footer {
+      .links {
+        p {
+        }
+        a {
+        }
+      }
+    }
+  }
+}

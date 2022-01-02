@@ -6,7 +6,7 @@ A Website for Viewing and Sharing Cocktail Recipes.
 
 The task was to create a Django + Python Application, utilising the information we had been taught the week prior. After working in a team for project 3, I wanted to aim for the challenge and see if I could test my own abilities.
 
-# Languages/Technologies Used
+# Languages/Technologies Used
 
 * HTML5, CSS3
 * Bootstrap, Sass
@@ -45,7 +45,7 @@ Users can see their saved items and the recipes they have added to the database 
 
 # Challenges 
 
-* Building a full stack application on your own for the first time is something to be proud. Problem solving on my own, thinking through the errors has for sure made me a tougher nut to crack.
+* Building a full stack application on your own for the first time is something to be proud. Problem solving and taking time to think through the errors has for sure made me a tougher nut to crack.
 * Deploying the application, I didn't think it would take as long as it did but glad I managed to experience doing it alone. 
 
 # Wins 

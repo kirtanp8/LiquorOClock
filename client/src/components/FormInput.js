@@ -10,7 +10,7 @@ const FormInput = ({
   handleFormChange,
 }) => {
   return (
-    <div>
+    <div className='form-input-file'>
       <Form.Control
         className="text-field"
         placeholder={placeholder} 

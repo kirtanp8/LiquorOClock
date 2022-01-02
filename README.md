@@ -48,7 +48,7 @@ Users can see their saved items and the recipes they have added to the database 
 * Building a full stack application on your own for the first time is something to be proud. Problem solving on my own, thinking through the errors has for sure made me a tougher nut to crack.
 * Deploying the application, I didn't think it would take as long as it did but glad I managed to experience doing it alone. 
 
-# Wins 
+# Wins 
 
 * I am really happy with my design, the mobile view, the addition of the hamburger, it comes in handy for the mobile view.
 * The colour scheme deserves a retweet too.

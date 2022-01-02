@@ -9,7 +9,7 @@ The task was to create a Django + Python Application, utilising the information 
 # Languages/Technologies Used
 
 * HTML5, CSS3
-* Bootstrap, Bulma
+* Bootstrap, Sass
 * JavaScript ES6+
 * React
 * Python
@@ -43,4 +43,17 @@ Users can see their saved items and the recipes they have added to the database 
 
 ![Screenshot 2022-01-02 at 22 36 58](https://user-images.githubusercontent.com/83728526/147891225-773b0c08-21ba-4391-a59f-d94371140512.png)
 
+# Challenges 
 
+* Building a full stack application on your own for the first time is something to be proud. Problem solving on my own, thinking through the errors has for sure made me a tougher nut to crack.
+* Deploying the application, I didn't think it would take as long as it did but glad I managed to experience doing it alone. 
+
+# Wins 
+
+* I am really happy with my design, the mobile view, the addition of the hamburger, it comes in handy for the mobile view.
+* The colour scheme deserves a retweet too.
+
+# Future Enhancements
+
+* Adding a search bar so users can search for different recipes and see if they are already there. 
+* Users being able to like one anothers reviews, maybe upvote and down vote them.

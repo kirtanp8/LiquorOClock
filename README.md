@@ -28,5 +28,6 @@ Authentication fueled by Django means that users will need to be logged in and r
 
 Users can see their saved items and the recipes they have added to the database through their profile page. I think I should have made use of the profile picture but didn't really find it neccessary for the website. I think being able to learn how to implement cloudinary and uploading a photo onto a website gave me enough satisfaction. 
 
-https://user-images.githubusercontent.com/83728526/147891042-9a4a6fd5-655b-4eaf-be77-35e276eae4f8.mp4
+![Screenshot 2022-01-02 at 22 36 58](https://user-images.githubusercontent.com/83728526/147891225-773b0c08-21ba-4391-a59f-d94371140512.png)
+
 

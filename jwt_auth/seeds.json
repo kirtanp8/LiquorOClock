@@ -1,0 +1,48 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$joyjExGANiCqvy60xAQZjH$H7+RJqosTlJx/GxmmyiG25HC5NO53HUACaZL/lIo9Ik=",
+    "last_login": "2021-12-21T01:47:25Z",
+    "is_superuser": true,
+    "username": "Kirtan",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-12-21T01:46:56Z",
+    "email": "kirtantpatel@gmail.com",
+    "first_name": "Kirtan",
+    "last_name": "Patel",
+    "image": "https://media-exp1.licdn.com/dms/image/C4D03AQF3uqAv0M2T8A/profile-displayphoto-shrink_200_200/0/1633305600117?e=1645660800&v=beta&t=lZSBY6YslgxC3lFIxX_oBLTOlO35LU_gQENWYEvRDnQ",
+    "groups": [],
+    "user_permissions": [],
+    "saved": [
+      1,
+      2,
+      20,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$qajR5rRNpPp3bPpPpO6H0z$aOi0r51SkHJHW+BMrDQZZGF8QnIqZ7YDvZEphIESQdE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kirtantp@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-12-28T16:30:30.644Z",
+    "email": "kirtantp@gmail.com",
+    "first_name": "Kirtan",
+    "last_name": "Patel",
+    "image": "http://res.cloudinary.com/dqtv8nbqw/image/upload/v1640709028/ShotsOclock/pqsznxlmanapgqe9w6hy.png",
+    "groups": [],
+    "user_permissions": [],
+    "saved": []
+  }
+}
+]

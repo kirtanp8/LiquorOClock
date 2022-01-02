@@ -1,0 +1,50 @@
+[
+{
+  "model": "reviews.review",
+  "pk": 1,
+  "fields": {
+    "title": "Really Nice Drink",
+    "text": "Tastes much better with Ice :)",
+    "created": "2021-12-21T02:11:29.933Z",
+    "star_rating": "5.00",
+    "owner": 1,
+    "recipe": 1
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 3,
+  "fields": {
+    "title": "Loved it!",
+    "text": "This was Great",
+    "created": "2021-12-23T02:04:34.169Z",
+    "star_rating": "3.50",
+    "owner": 1,
+    "recipe": 1
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 4,
+  "fields": {
+    "title": "This was Great!",
+    "text": "Loved it :)",
+    "created": "2021-12-27T07:24:02.141Z",
+    "star_rating": "5.00",
+    "owner": 1,
+    "recipe": 18
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 5,
+  "fields": {
+    "title": "Great Stuff!",
+    "text": "Will be making this for my wife on her birthday :)",
+    "created": "2021-12-27T07:25:39.715Z",
+    "star_rating": "4.00",
+    "owner": 1,
+    "recipe": 18
+  }
+}
+]

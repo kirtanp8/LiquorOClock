@@ -44,7 +44,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SpiritsOClock.urls'
 
 TEMPLATES = [
     {
@@ -135,6 +134,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'jwt_auth.User'
+
+ROOT_URLCONF = 'SpiritsOClock.urls'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'client', "build", "static"),

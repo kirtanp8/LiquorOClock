@@ -17,6 +17,7 @@ The task was to create a Django + Python Application, utilising the information 
 * PostgreSQL
 * Yarn, NPM
 * Git, GitHub
+* Postman, Postbird, Insomnia
 
 # Mobile View
 
@@ -52,6 +53,7 @@ Users can see their saved items and the recipes they have added to the database 
 
 * I am really happy with my design, the mobile view, the addition of the hamburger, it comes in handy for the mobile view.
 * The colour scheme deserves a retweet too.
+* Learning how to implement one-to-many relationships and many-to-many relationships in the backend should come handy in the near future. 
 
 # Future Enhancements
 

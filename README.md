@@ -62,4 +62,4 @@ Users can see their saved items and the recipes they have added to the database 
 # Future Enhancements
 
 * Adding a search bar so users can search for different recipes and see if they are already there. 
-* Users being able to like one anothers reviews, maybe upvote and downvote them.
+* Users being able to like eachother's reviews, maybe upvote and downvote them.

@@ -2,6 +2,10 @@
 
 A Website for Viewing and Sharing Cocktail Recipes. 
 
+Feel free to browse the application at: https://spiritsoclock2021.herokuapp.com/login
+* Username: admin@admin.com
+* Password: Master99
+
 # Project Overview
 
 The task was to create a Django + Python Application, utilising the information we had been taught the week prior. After working in a team for project 3, I wanted to aim for the challenge and see if I could test my own abilities.

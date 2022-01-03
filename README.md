@@ -44,7 +44,7 @@ https://user-images.githubusercontent.com/83728526/147891500-c5441a44-b207-4b13-
 
 # Profile Page 
 
-Users can see their saved items and the recipes they have added to the database through their profile page. I think I should have made use of the profile picture but didn't really find it neccessary for the website. I think being able to learn how to implement cloudinary and uploading a photo onto a website gave me enough satisfaction. 
+Users can see their saved items and the recipes they have added to the database through their profile page. I think I should have made use of the profile picture but didn't really find it necessary for the website. I think being able to learn how to implement cloudinary and uploading a photo onto a website gave me enough satisfaction. 
 
 ![Screenshot 2022-01-02 at 22 36 58](https://user-images.githubusercontent.com/83728526/147891225-773b0c08-21ba-4391-a59f-d94371140512.png)
 
@@ -62,4 +62,4 @@ Users can see their saved items and the recipes they have added to the database 
 # Future Enhancements
 
 * Adding a search bar so users can search for different recipes and see if they are already there. 
-* Users being able to like one anothers reviews, maybe upvote and down vote them.
+* Users being able to like one anothers reviews, maybe upvote and downvote them.

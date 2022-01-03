@@ -21,7 +21,7 @@ The task was to create a Django + Python Application, utilising the information 
 
 # Mobile View
 
-When you shrink the page, the website doesn't go pear shaped, and  I'm very proud of myself for implementing the below view even though it was a requirement, and when you shrink the page, on any page, the website looks great. 
+The website can be viewed on mobile, also when you shrink the page the website doesn't go pear  shaped. 
 
 https://user-images.githubusercontent.com/83728526/147891303-783b9d05-626b-4722-ae44-e8de51c6cd9e.mp4
 

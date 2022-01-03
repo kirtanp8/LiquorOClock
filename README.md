@@ -21,7 +21,7 @@ The task was to create a Django + Python Application, utilising the information 
 
 # Mobile View
 
-The website can be viewed on mobile, also when you shrink the page the website doesn't go pear  shaped. 
+The website can be viewed on mobile, also when you shrink the page the website doesn't go pear shaped. 
 
 https://user-images.githubusercontent.com/83728526/147891303-783b9d05-626b-4722-ae44-e8de51c6cd9e.mp4
 
@@ -46,7 +46,7 @@ Users can see their saved items and the recipes they have added to the database 
 
 # Challenges 
 
-* Building a full stack application on your own for the first time is something to be proud. Problem solving and taking time to think through the errors has for sure made me a tougher nut to crack.
+* Building a full stack application on your own for the first time is something to be proud. Problem solving and taking time to think through the errors has for sure given me some valuable experience prior to entering the industry.
 * Deploying the application, I didn't think it would take as long as it did but glad I managed to experience doing it alone. 
 
 # Wins 

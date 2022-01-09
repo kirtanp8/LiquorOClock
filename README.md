@@ -23,6 +23,15 @@ The task was to create a Django + Python Application, utilising the information 
 * Git, GitHub
 * Postman, Postbird, Insomnia
 
+# Wireframe 
+
+I have added some copies of my wireframes below. 
+
+![cocktail page](https://user-images.githubusercontent.com/83728526/148702332-8253590a-f5dc-4a1f-a333-3f0c2d2685f4.png)
+![home page](https://user-images.githubusercontent.com/83728526/148702333-5f1aeb72-0fbf-4565-9d07-9dc4ec2a16d3.png)
+![recipe page](https://user-images.githubusercontent.com/83728526/148702334-659954b5-b6b8-4b36-9382-d7f7ba62a049.png)
+
+
 # Mobile View
 
 The website can be viewed on mobile, also when you shrink the page the website doesn't go pear shaped. 

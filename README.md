@@ -25,7 +25,7 @@ The task was to create a Django + Python Application, utilising the information 
 
 # Wireframes 
 
-I have added some copies of my wireframes below.
+I have added some copies of my wireframes below. Working on a wireframe, gave me a clear idea of something to work for and picture when doing the front-end which took up the most of my time when working on the project.
 
 ![cocktail page](https://user-images.githubusercontent.com/83728526/148702332-8253590a-f5dc-4a1f-a333-3f0c2d2685f4.png)
 ![home page](https://user-images.githubusercontent.com/83728526/148702333-5f1aeb72-0fbf-4565-9d07-9dc4ec2a16d3.png)

@@ -43,6 +43,8 @@ I have added some copies of my wireframes below. Working on a wireframe, gave me
 
 # Backend and Database
 
+**Users**
+
 This was my first project using both Django and Python as the main language & framework to interact with a PostgreSQL database, so it was quite the learning curve for me however, the error messaging was very clear and precise and came in handy when I was debugging. 
 
 As I was building my User's profile in the backend, I discovered that I would need to create seperate versions of it. For example, I wanted to create a many-to-many relationship with the User and their saved items, however, when doing this without creating a seperate serializer, it would create an infinte relationship loop which caused me much headache to figure out.  

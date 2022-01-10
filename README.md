@@ -25,7 +25,7 @@ The task was to create a Django + Python Application, utilising the information 
 
 # Wireframes 
 
-I wanted to ensure that my application was visually appealing to the user but also relevant to what most recipe websites would look like, so I planned my website by building wireframes for the front-end. In order to create the wireframes, I used Lucid App having used Figma previously I thought it would be good to try a new application, and to be honest I thought it was a lot easier to navigate. 
+I wanted to ensure that my application was visually appealing to the user but also relevant to what most recipe websites would look like, so I planned my website by building wireframes for the front-end. In order to create the wireframes, I used Lucid App having used Figma previously I thought it would be good to try a new application, and to be honest I thought it was a lot easier to navigate through. 
 
 I have added some copies of my wireframes below. Working on a wireframe, gave me a clear idea of something to work for and picture when doing the front-end which took up the most of my time when working on the project.
 

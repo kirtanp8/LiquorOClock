@@ -57,6 +57,143 @@ class SavedSerializer(serializers.ModelSerializer):
         
 ```
 
+In my database I needed several users who could post and share their own recipes and comment on them as well as other user's recipes. 
+
+As advised by my teacher, it was best to start off by creating the user model. 
+
+```
+class JWTAuthentication(BasicAuthentication):
+
+    def authenticate(self, request):
+        header = request.headers.get('Authorization')
+        if not header:
+            return None
+        if not header.startswith('Bearer'):
+            raise PermissionDenied(detail="Invalid Auth Token Format!")
+        token = header.replace('Bearer ', '')
+
+        try:
+            payload = jwt.decode(
+                token, settings.SECRET_KEY, algorithms=['HS256'])
+            user = User.objects.get(pk=payload.get('sub'))
+
+        except jwt.exceptions.InvalidTokenError:
+            raise PermissionDenied(detail="Invalid Token!")
+
+        except User.DoesNotExist:
+            raise PermissionDenied(detail="Not Found")
+        return (user, token)
+
+```
+
+I started off by adding in the authentication which is very similar to how my team wrote the `secureRoute` middleware in the Express module for our MERN stack project.
+
+* First I check for a Authorization header. If there isn't one, I return `None`, which means the user continues as an unauthorised user, they will not be able to perform any authorised actions.
+* `if` there is a header, but it does not start with Bearer I throw a `PermissionDenied` error, which will in turn return a `403 response` with the message `Invalid Auth Token Format!`.
+* `if` the header is approved, I extract the token from it by removing the `Bearer` portion of the string, then decode the token, which gives back the payload, including the sub or user's ID. This `gets` the user from the database.
+
+**Below** I also needed to ensure the user can register. The view below simply creates a new user and sends back a success message if all is well, and any errors `if` not. 
+
+```
+
+class RegisterView(APIView):
+
+    def post(self, request):
+        user_to_create = UserSerializer(data=request.data)
+        if user_to_create.is_valid():
+            user_to_create.save()
+            return Response({
+                'message': 'Registration Successful!'
+            },
+                status=status.HTTP_200_OK
+            )
+        return Response(user_to_create.errors,
+                        status=status.HTTP_422_UNPROCESSABLE_ENTITY
+                        )
+```
+
+However, the login view below finds the user by email and verifies their password with Django's check_password function that's automatically added to the user object. `if` there is an error, I send back an error message but if all is well and good the view creates a token and returns it to the client in the response. 
+
+```
+
+class LoginView(APIView):
+
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+        try:
+            user_to_login = User.objects.get(email=email)
+        except User.DoesNotExist:
+            raise PermissionDenied(detail="Invalid Credentials")
+
+        if not user_to_login.check_password(password):
+            raise PermissionDenied(detail="Invalid Credentials")
+
+        dt = datetime.now() + timedelta(days=7)
+        token = jwt.encode(
+            {'sub': user_to_login.id, 'exp': int(dt.strftime('%s'))},
+            settings.SECRET_KEY,
+            algorithm='HS256'
+        )
+
+        return Response({'username': user_to_login.username, 'id': user_to_login.id, 'token': token, 'message':
+                        f"Welcome back, {user_to_login.username}!"},
+                        status=status.HTTP_200_OK)
+
+
+```
+
+
+**Recipes**
+
+The next step was to implement a Recipes Model which held a one to many relationship with the reviews model, as one Recipe could have multiple reviews. It also held a one-to-many relationship with the user as one user has the access to post many recipes. 
+
+To do this, I added an owner to the Recipe model with the below code, meaning whenever a user posts a Recipe to the database a user ID number will be stored in the object.
+
+```
+    owner = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='recipes',
+        on_delete=models.CASCADE,
+    )
+
+```
+
+However, I also needed a populated serializer to ensure I retrieved all the details of the user who posts the recipes to the database. 
+
+```
+
+class PopulatedRecipeSerializer(RecipeSerializer):
+    reviews = PopulatedReviewSerializer(many=True)
+    owner = UserSerializer()
+
+```
+
+Otherwise, this would give me more work to do in the frontend. 
+
+
+```
+
+class RecipeDetailView(APIView):
+
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+
+    def get_recipe(self, pk):
+        try:
+            return Recipe.objects.get(pk=pk)
+        except Recipe.DoesNotExist:
+            raise NotFound(detail="The Recipe Cannot Be Found")
+
+    def get(self, request, pk):
+        recipe = self.get_recipe(pk=pk)
+        serialized_recipe = PopulatedRecipeSerializer(recipe)
+        return Response(serialized_recipe.data, status=status.HTTP_200_OK)
+
+
+```
+
+
+
 # Mobile View
 
 The website can be viewed on mobile, also when you shrink the page the website doesn't go pear shaped. 
@@ -77,8 +214,6 @@ https://user-images.githubusercontent.com/83728526/147891500-c5441a44-b207-4b13-
 
 I've added where the inspiration came from below:
 ![Screenshot 2022-01-08 at 22 57 58](https://user-images.githubusercontent.com/83728526/148662696-43a9fd23-f3bf-4c57-b927-d6c595034b13.png)
-
-
 
 
 # Profile Page 

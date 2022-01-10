@@ -281,7 +281,7 @@ Another cool feature of my application is the implementation of the Modal Review
 
 To be able to have the Modal Review Form appear on screen, I needed to make use of the React Hook `useState()` 
 
-First I gave the variable a false value so that it will always remain closed, however, it will switch on when the user clicks the review button. 
+To do this I first gave the variable a false value so that it will always remain closed, however, it will switch on when the user clicks the review button. 
 
 `const [addReviewShow, setAddReviewShow] = useState(false)`
 

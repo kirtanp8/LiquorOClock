@@ -224,6 +224,10 @@ Users can see their saved items and the recipes they have added to the database 
 
 ![Screenshot 2022-01-02 at 22 36 58](https://user-images.githubusercontent.com/83728526/147891225-773b0c08-21ba-4391-a59f-d94371140512.png)
 
+# Frontend
+
+Due to the code in the backend being so well-put together, accessing the data from the frontend was made so much easier. 
+
 # Challenges 
 
 * Building a full stack application on your own for the first time is something to be proud. Problem solving and taking time to think through the errors has for sure given me some valuable experience prior to entering the industry.

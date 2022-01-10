@@ -226,7 +226,53 @@ Users can see their saved items and the recipes they have added to the database 
 
 # Frontend Challenges
 
-Due to the code in the backend being so well-put together, accessing the data from the frontend was made so much easier. 
+**Save** and **Unsave**
+
+Due to the code in the backend being so well-put together, accessing the data from the frontend was made so much easier. However, the toughest challenge I set myself was to be able to `save` and `unsave` a recipe to the users profile page. It's also something I knew I wanted to from the beginning because during my project 3, I never got a chance to help with the `like` and `unlike` button.
+
+So the first thing I did was make a request for the users saved recipes, which I got from the below `get` request.
+
+* The function stores the users saved recipes in variable using `setSaved(response.data.saved)`
+* 
+
+```
+    useEffect(() => {
+    async function fetchUserDetail() {
+      const config = {
+        method: 'get',
+        url: '/api/auth/saved/',
+        headers: { 
+          'Authorization': `Bearer ${getToken()}`,
+          'Content-Type': 'application/json',
+        },
+      }
+
+      const response = await axios(config)
+      setSaved(response.data.saved)
+    }
+    fetchUserDetail()
+  }, [])
+
+```
+
+Then I know what cocktail page the user is on with the `useParams()` method --> `const { id } = useParams()`.
+
+` const isSaved = saved.filter(ele => ele.id == id ? true : false) `.  The filter method here then checks to see if the user has saved the cocktail in their saved recipes, `if` they do then the `isSaved` variables length will be 1, `else` it will be 0.
+
+
+So therefore, in the below `return` I check to see `if` the `isSaved` variable's length has a value of 1, `if` it does then the user will be able to see the Save Recipe button, `else` they will see `Unsave`.   
+
+```
+     <div className='save-recipe'>
+        {isSaved.length === 1 ?
+          <UnSaveRecipe className='save' isSaved={isSaved} setIsSaved={setIsSaved} /> : <SaveRecipe className='save' isSaved={isSaved} setIsSaved={setIsSaved} />
+        }
+          <Button onClick={handleAddReviewShow}>REVIEW</Button>
+          <AddReview handleAddReviewClose={handleAddReviewClose} handleAddReviewShow={handleAddReviewShow} addReviewShow={addReviewShow}/>
+      </div>
+
+```
+
 
 # Challenges 
 

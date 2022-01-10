@@ -39,6 +39,9 @@ I have added some copies of my wireframes below. Working on a wireframe, gave me
 
 ![recipe page](https://user-images.githubusercontent.com/83728526/148702334-659954b5-b6b8-4b36-9382-d7f7ba62a049.png)
 
+# Backend and Database
+
+This was my first project using both Django and Python as the main language & framework to interact with a PostgreSQL database, so it was quite the learning curve for me however, the error messaging was very clear and precise and came in handy when I was debugging. 
 
 # Mobile View
 

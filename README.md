@@ -273,7 +273,40 @@ So therefore, in the below `return` I check to see `if` the `isSaved` variable's
 
 ```
 
-**React Stars**
+**React Stars and Modal Review Form**
+
+Another cool feature of my application is the implementation of the Modal Review Form and being able to give a star rating.
+
+![Screenshot 2022-01-10 at 19 44 20](https://user-images.githubusercontent.com/83728526/148828962-c08f0ed6-2a57-4874-bca3-08f1970876ec.png)
+
+To be able to have the Modal Review Form appear on screen, I needed to make use of the React Hook `useState()` 
+
+First I gave the variable a false value so that it will always remain closed, however, it will switch on when the user clicks the review button. 
+
+`const [addReviewShow, setAddReviewShow] = useState(false)`
+
+Then I created two arrow functions below which change the value of the state variable.
+
+```
+  const handleAddReviewShow = () => setAddReviewShow(true)
+  const handleAddReviewClose = () => setAddReviewShow(false)
+```
+
+So that when the user clicks on the review button below 
+
+```
+<Button onClick={handleAddReviewShow}>REVIEW</Button>
+```
+
+I can tell React that the Modal Review form must appear
+
+
+```
+    <Modal
+      show={addReviewShow}
+      onHide={handleAddReviewClose}
+     >
+```
 
 # Challenges 
 

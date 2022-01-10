@@ -279,27 +279,21 @@ Another cool feature of my application is the implementation of the Modal Review
 
 ![Screenshot 2022-01-10 at 19 44 20](https://user-images.githubusercontent.com/83728526/148828962-c08f0ed6-2a57-4874-bca3-08f1970876ec.png)
 
-To be able to have the Modal Review Form appear on screen, I needed to make use of the React Hook `useState()` 
+To be able to have the Modal Review Form appear on screen, I needed to make use of the React Hook `useState()`. 
 
-To do this I first gave the variable a false value so that it will always remain closed, however, it will switch on when the user clicks the review button. 
+To do this I first set the variable below as a `false` value so that it will always remain closed and it will only show up when the user clicks the review button. 
 
 `const [addReviewShow, setAddReviewShow] = useState(false)`
 
-Then I created two arrow functions below which change the value of the state variable.
+I then created two arrow functions below which change the value of the state variable.
 
 ```
   const handleAddReviewShow = () => setAddReviewShow(true)
   const handleAddReviewClose = () => setAddReviewShow(false)
+  
 ```
 
-So that when the user clicks on the review button below 
-
-```
-<Button onClick={handleAddReviewShow}>REVIEW</Button>
-```
-
-I can tell React that the Modal Review form must appear
-
+as I can tell React that the Modal Review form must appear only when the variable addReviewShow has been set to `true`.
 
 ```
     <Modal
@@ -307,6 +301,13 @@ I can tell React that the Modal Review form must appear
       onHide={handleAddReviewClose}
      >
 ```
+And this is done when the user clicks on the review button below.
+
+```
+<Button onClick={handleAddReviewShow}>REVIEW</Button>
+```
+
+
 
 # Challenges 
 

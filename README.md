@@ -307,12 +307,6 @@ And this is done when the user clicks on the review button below.
 <Button onClick={handleAddReviewShow}>REVIEW</Button>
 ```
 
-```
-
-
-
-
-
 # Challenges 
 
 * Building a full stack application on your own for the first time is something to be proud. Problem solving and taking time to think through the errors has for sure given me some valuable experience prior to entering the industry.

@@ -25,7 +25,7 @@ The task was to create a Django + Python Application, utilising the information 
 
 # Wireframes 
 
-I wanted to ensure that my application was visually appealing to the user but also relevant to what most recipe websites would look like, so I planned my website by building wireframes for the front-end. In order to create the wireframes, I used Lucid App having used Figma previously I thought it would be good to try a new application, and to be honest I thought it was a lot easier to navigate through. 
+I wanted to ensure that my application was visually appealing to the user but also relevant to what most recipe websites would look like, so I planned my website by building wireframes for the front-end. In order to create the wireframes, I used LucidApp, having used Figma previously, I thought it would be good to try a new application, and to be honest I thought it was a lot easier to navigate through. 
 
 I have added some copies of my wireframes below. Working on a wireframe, gave me a clear idea of something to work for and picture when doing the front-end which took up the most of my time when working on the project.
 
@@ -47,7 +47,7 @@ I have added some copies of my wireframes below. Working on a wireframe, gave me
 
 This was my first project using both Django and Python as the main language & framework to interact with a PostgreSQL database, so it was quite the learning curve for me however, the error messaging was very clear and precise and came in handy when I was debugging. 
 
-As I was building my User's profile in the backend, I discovered that I would need to create seperate versions of it. For example, I wanted to create a many-to-many relationship with the User and their saved items, however, when doing this without creating a seperate serializer, it would create an infinite relationship loop which caused me much headache to figure out.  
+As I was building my User's profile in the backend, I discovered that I would need to create seperate versions of the User's profile. For example, I wanted to create a many-to-many relationship with the User and their saved items, however, when doing this without creating a seperate serializer, it would create an infinite relationship loop which caused me much headache to figure out.  
 
 
 ```
@@ -228,11 +228,11 @@ Users can see their saved items and the recipes they have added to the database 
 
 **Save** and **Unsave**
 
-Due to the code in the backend being so well-put together, accessing the data from the frontend was made so much easier. However, the toughest challenge I set myself was to be able to `save` and `unsave` a recipe to the users profile page. It's also something I knew I wanted to from the beginning because during my project 3, I never got a chance to help with the `like` and `unlike` button.
+Due to the code in the backend being so well-put together, accessing the data from the frontend was made so much easier. However, the toughest challenge I set myself was to be able to `save` and `unsave` a recipe to the user's profile page. It's also something I knew I wanted to do from the beginning because during my project 3, I never got a chance to help with the `like` and `unlike` button.
 
-So the first thing I did was make a request for the users saved recipes, which I got from the below `get` request.
+So the first thing I did was make a request for the user's saved recipes, which I got from the below `get` request.
 
-* The function stores the users saved recipes in variable using `setSaved(response.data.saved)`
+* The function stores the user's saved recipes in a variable using `setSaved(response.data.saved)`
 * 
 
 ```

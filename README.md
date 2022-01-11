@@ -47,7 +47,7 @@ I have added some copies of my wireframes below. Working on a wireframe, gave me
 
 This was my first project using both Django and Python as the main language & framework to interact with a PostgreSQL database, so it was quite the learning curve for me however, the error messaging was very clear and precise and came in handy when I was debugging. 
 
-As I was building my User's profile in the backend, I discovered that I would need to create seperate versions of it. For example, I wanted to create a many-to-many relationship with the User and their saved items, however, when doing this without creating a seperate serializer, it would create an infinte relationship loop which caused me much headache to figure out.  
+As I was building my User's profile in the backend, I discovered that I would need to create seperate versions of it. For example, I wanted to create a many-to-many relationship with the User and their saved items, however, when doing this without creating a seperate serializer, it would create an infinite relationship loop which caused me much headache to figure out.  
 
 
 ```
@@ -90,8 +90,8 @@ class JWTAuthentication(BasicAuthentication):
 
 I started off by adding in the authentication which is very similar to how my team wrote the `secureRoute` middleware in the Express module for our MERN stack project.
 
-* First I check for a Authorization header. If there isn't one, I return `None`, which means the user continues as an unauthorised user, they will not be able to perform any authorised actions.
-* `if` there is a header, but it does not start with Bearer I throw a `PermissionDenied` error, which will in turn return a `403 response` with the message `Invalid Auth Token Format!`.
+* First I check for an Authorization header. If there isn't one, I return `None`, which means the user continues as an unauthorised user, they will not be able to perform any authorised actions.
+* `if` there is a header but it does not start with Bearer I throw a `PermissionDenied` error, which will in turn return a `403 response` with the message `Invalid Auth Token Format!`.
 * `if` the header is approved, I extract the token from it by removing the `Bearer` portion of the string, then decode the token, which gives back the payload, including the sub or user's ID. This `gets` the user from the database.
 
 **Below** I also needed to ensure the user can register. The view below simply creates a new user and sends back a success message if all is well, and any errors `if` not. 
@@ -321,4 +321,4 @@ And this is done when the user clicks on the review button below.
 # Future Enhancements
 
 * Adding a search bar so users can search for different recipes and see if they are already there. 
-* Users being able to like eachother's reviews, maybe upvote and downvote them.
+* Users being able to like each other's reviews, maybe upvote and downvote them.

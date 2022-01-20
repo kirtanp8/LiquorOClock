@@ -318,6 +318,11 @@ And this is done when the user clicks on the review button below.
 * The colour scheme deserves a retweet too.
 * Learning how to implement one-to-many relationships and many-to-many relationships in the backend should come handy in the near future. 
 
+# Key Learnings
+
+* Learning how to deploy a website with netlify following steps provided by GA instructors, experiencing what needed to be re-arranged and fixing the bugs that came with this particluar experience and solving them using Google as a guide.
+* Learning the difference between One-to-Many Relationships and Many-to-Many Relationships. 
+
 # Future Enhancements
 
 * Adding a search bar so users can search for different recipes and see if they are already there. 

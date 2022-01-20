@@ -321,7 +321,7 @@ And this is done when the user clicks on the review button below.
 # Key Learnings
 
 * Learning how to deploy a website with netlify following steps provided by GA instructors, experiencing what needed to be re-arranged and fixing the bugs that came with this particluar experience and solving them using Google as a guide.
-* Learning the difference between One-to-Many Relationships and Many-to-Many Relationships. 
+* Learning how to use cloudinary. 
 
 # Future Enhancements
 
